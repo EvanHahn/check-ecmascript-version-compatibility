@@ -1,0 +1,32 @@
+{
+  "name": "check-ecmascript-5-compatibility",
+  "version": "0.0.0",
+  "description": "Test files for ES5 compatibility.",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:EvanHahn/check-ecmascript-5-compatibility.git"
+  },
+  "main": "check-es5-compatiblity.js",
+  "scripts": {
+    "lint": "eslint check-es5-compatibility.js test/check-es5-compatibility.js",
+    "pretest": "npm run lint",
+    "test": "mocha"
+  },
+  "keywords": [
+    "es5"
+  ],
+  "author": "Evan Hahn <me@evanhahn.com> (https://evanhahn.com)",
+  "contributors": [
+    "Blade Barringer <blade@crookedneighbor.com>"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "eslint": "^2.7.0",
+    "eslint-config-braintree": "^1.0.2",
+    "mocha": "^3.2.0"
+  },
+  "dependencies": {
+    "ecmascript-version-detector": "^1.0.3"
+  }
+}
