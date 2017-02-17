@@ -1,12 +1,12 @@
 'use strict';
 
-var checkFile = require('../check-es5-compatibility');
+var checkFile = require('../check-ecmascript-version-compatibility');
 var expect = require('chai').expect;
 
 var es5CompliantFile = './test/fixtures/es5.js';
 var es2016File = './test/fixtures/es2016.js';
 
-describe('check-ecmascript-5-compatibility', function () {
+describe('check-ecmascript-version-compatibility', function () {
   beforeEach(function () {
     this.timeout(2000);
     this.slow(2000);

@@ -1,14 +1,14 @@
 {
-  "name": "check-ecmascript-5-compatibility",
+  "name": "check-ecmascript-version-compatibility",
   "version": "0.0.0",
-  "description": "Test files for ES5 compatibility.",
+  "description": "Test files for ECMAScript version compatibility.",
   "repository": {
     "type": "git",
-    "url": "git@github.com:EvanHahn/check-ecmascript-5-compatibility.git"
+    "url": "git@github.com:EvanHahn/check-ecmascript-version-compatibility.git"
   },
   "main": "check-es5-compatiblity.js",
   "scripts": {
-    "lint": "eslint check-es5-compatibility.js test/check-es5-compatibility.js",
+    "lint": "eslint check-ecmascript-version-compatibility.js test/check-ecmascript-version-compatibility.js",
     "pretest": "npm run lint",
     "test": "mocha"
   },

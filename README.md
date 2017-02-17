@@ -1,12 +1,12 @@
-Check ES5 Compatiblity
-======================
+Check ECMAScript Version Compatibility
+======================================
 
 A small lib that helps check and make sure that your JavaScript will run in ES5 environments.
 
 ## Install
 
 ```sh
-npm install --save-dev check-es5-compatibility
+npm install --save-dev check-ecmascript-version-compatibility
 ```
 
 ## Usage
@@ -14,7 +14,7 @@ npm install --save-dev check-es5-compatibility
 Here's an example that uses Mocha:
 
 ```js
-var checkFile = require('check-es5-compatibility');
+var checkFile = require('check-ecmascript-version-compatibility');
 
 describe('my file', function () {
   it('is ES5-compliant', function (done) {
