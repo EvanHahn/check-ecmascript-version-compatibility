@@ -6,7 +6,7 @@
     "type": "git",
     "url": "git@github.com:EvanHahn/check-ecmascript-version-compatibility.git"
   },
-  "main": "check-es5-compatiblity.js",
+  "main": "check-ecmascript-version-compatibility.js",
   "scripts": {
     "lint": "eslint check-ecmascript-version-compatibility.js test/check-ecmascript-version-compatibility.js",
     "pretest": "npm run lint",
