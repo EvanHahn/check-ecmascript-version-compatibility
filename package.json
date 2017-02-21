@@ -28,5 +28,17 @@
   },
   "dependencies": {
     "ecmascript-version-detector": "^1.0.3"
+  },
+  "standard": {
+    "globals": [
+      "before",
+      "beforeEach",
+      "after",
+      "afterEach",
+      "describe",
+      "it",
+      "xdescribe",
+      "xit"
+    ]
   }
 }
