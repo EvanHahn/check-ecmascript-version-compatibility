@@ -3,7 +3,14 @@
 var parseEcmascriptVersion = require('ecmascript-version-detector').parse
 var fs = require('fs')
 
-function checkFile (file, cb) {
+var DEFAULT_VERSION = 5
+
+function checkFile (file, version, cb) {
+  if (!cb) {
+    cb = version
+    version = DEFAULT_VERSION
+  }
+
   fs.readFile(file, 'utf8', function (err, data) {
     var i, sections, expression, expressionVersion
 
@@ -21,8 +28,8 @@ function checkFile (file, cb) {
 
       expressionVersion = parseInt(expression.version, 10)
 
-      if (expressionVersion > 5) {
-        cb(new Error(expression.en.name + ' is ES' + expressionVersion + ', not ES5 compatible'))
+      if (expressionVersion > version) {
+        cb(new Error(expression.en.name + ' is ES' + expressionVersion + ', not ES' + version + ' compatible'))
         return
       }
     }

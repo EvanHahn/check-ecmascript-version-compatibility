@@ -23,4 +23,8 @@ describe('check-ecmascript-version-compatibility', function () {
       done()
     })
   })
+
+  it('allows you to pass an argument for version number to check', function (done) {
+    checkFile(es2016File, 2016, done)
+  })
 })
