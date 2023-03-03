@@ -29,7 +29,7 @@ function checkFile (file, version, cb) {
       expressionVersion = parseInt(expression.version, 10)
 
       if (expressionVersion > version) {
-        cb(new Error(expression.en.name + ' is ES' + expressionVersion + ', not ES' + version + ' compatible'))
+        cb(new Error(file + ': ' + expression.en.name + ' is ES' + expressionVersion + ', not ES' + version + ' compatible'))
         return
       }
     }

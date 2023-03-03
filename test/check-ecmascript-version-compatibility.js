@@ -16,10 +16,10 @@ describe('check-ecmascript-version-compatibility', function () {
     checkFile(es5CompliantFile, done)
   })
 
-  it('calls callback with an error if the file passed contains code that is greater than ES5', function (done) {
+  it('calls callback with an error that includes the filename if the file passed contains code that is greater than ES5', function (done) {
     checkFile(es2016File, function (err) {
       expect(err).to.be.an.instanceof(Error)
-      expect(err.message).to.equal('ArrowFunctionExpression is ES2015, not ES5 compatible')
+      expect(err.message).to.equal(`${es2016File}: ArrowFunctionExpression is ES2015, not ES5 compatible`)
       done()
     })
   })
