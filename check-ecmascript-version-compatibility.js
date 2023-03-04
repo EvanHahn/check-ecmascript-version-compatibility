@@ -1,41 +1,54 @@
-'use strict'
+"use strict";
 
-var parseEcmascriptVersion = require('ecmascript-version-detector').parse
-var fs = require('fs')
+var parseEcmascriptVersion = require("ecmascript-version-detector").parse;
+var fs = require("fs");
 
-var DEFAULT_VERSION = 5
+var DEFAULT_VERSION = 5;
 
-function checkFile (file, version, cb) {
+function checkFile(file, version, cb) {
   if (!cb) {
-    cb = version
-    version = DEFAULT_VERSION
+    cb = version;
+    version = DEFAULT_VERSION;
   }
 
-  fs.readFile(file, 'utf8', function (err, data) {
-    var i, sections, expression, expressionVersion
+  fs.readFile(file, "utf8", function (err, data) {
+    var i, sections, expression, expressionVersion;
 
     if (err) {
-      cb(err)
-      return
+      cb(err);
+      return;
     }
 
-    sections = parseEcmascriptVersion(data)
+    sections = parseEcmascriptVersion(data);
 
     for (i = 0; i < sections.length; i++) {
-      expression = sections[i]
+      expression = sections[i];
 
-      if (expression.selector === "//Program[@sourceType=='module']") { continue }
+      if (expression.selector === "//Program[@sourceType=='module']") {
+        continue;
+      }
 
-      expressionVersion = parseInt(expression.version, 10)
+      expressionVersion = parseInt(expression.version, 10);
 
       if (expressionVersion > version) {
-        cb(new Error(file + ': ' + expression.en.name + ' is ES' + expressionVersion + ', not ES' + version + ' compatible'))
-        return
+        cb(
+          new Error(
+            file +
+              ": " +
+              expression.en.name +
+              " is ES" +
+              expressionVersion +
+              ", not ES" +
+              version +
+              " compatible"
+          )
+        );
+        return;
       }
     }
 
-    cb()
-  })
+    cb();
+  });
 }
 
-module.exports = checkFile
+module.exports = checkFile;

@@ -1,9 +1,9 @@
-'use strict'
+"use strict";
 
-const foo = 'foo'
+const foo = "foo";
 
 let bar = () => {
-  return foo
-}
+  return foo;
+};
 
-module.exports = bar
+module.exports = bar;

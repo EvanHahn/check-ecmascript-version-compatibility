@@ -13,7 +13,10 @@
     "check-ecmascript-version-compatibility.js"
   ],
   "scripts": {
-    "lint": "standard",
+    "format": "prettier --write .",
+    "lint:eslint": "eslint .",
+    "lint:prettier": "prettier --check .",
+    "lint": "npm run lint:eslint && npm run lint:prettier",
     "pretest": "npm run lint",
     "test": "mocha"
   },
@@ -26,22 +29,11 @@
   ],
   "license": "MIT",
   "devDependencies": {
+    "eslint": "^8.35.0",
     "mocha": "^10.2.0",
-    "standard": "^8.6.0"
+    "prettier": "^2.8.4"
   },
   "dependencies": {
     "ecmascript-version-detector": "^1.0.3"
-  },
-  "standard": {
-    "globals": [
-      "before",
-      "beforeEach",
-      "after",
-      "afterEach",
-      "describe",
-      "it",
-      "xdescribe",
-      "xit"
-    ]
   }
 }

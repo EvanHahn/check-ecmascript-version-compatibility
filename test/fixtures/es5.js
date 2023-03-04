@@ -1,9 +1,9 @@
-'use strict'
+"use strict";
 
-var foo = 'foo'
+var foo = "foo";
 
-function bar () {
-  return foo
+function bar() {
+  return foo;
 }
 
-module.exports = bar
+module.exports = bar;
