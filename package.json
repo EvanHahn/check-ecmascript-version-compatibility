@@ -7,6 +7,11 @@
     "url": "git@github.com:EvanHahn/check-ecmascript-version-compatibility.git"
   },
   "main": "check-ecmascript-version-compatibility.js",
+  "files": [
+    "LICENSE",
+    "README.md",
+    "check-ecmascript-version-compatibility.js"
+  ],
   "scripts": {
     "lint": "standard",
     "pretest": "npm run lint",
