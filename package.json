@@ -18,7 +18,7 @@
     "lint:prettier": "prettier --check .",
     "lint": "npm run lint:eslint && npm run lint:prettier",
     "pretest": "npm run lint",
-    "test": "mocha"
+    "test": "node --test"
   },
   "keywords": [
     "es5"
@@ -30,7 +30,6 @@
   "license": "MIT",
   "devDependencies": {
     "eslint": "^8.35.0",
-    "mocha": "^10.2.0",
     "prettier": "^2.8.4"
   },
   "dependencies": {

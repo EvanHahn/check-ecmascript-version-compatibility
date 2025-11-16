@@ -1,5 +1,6 @@
 "use strict";
 
+var { describe, it } = require("node:test");
 var checkFile = require("../check-ecmascript-version-compatibility");
 var assert = require("node:assert");
 
@@ -7,16 +8,11 @@ var es5CompliantFile = "./test/fixtures/es5.js";
 var es2016File = "./test/fixtures/es2016.js";
 
 describe("check-ecmascript-version-compatibility", function () {
-  beforeEach(function () {
-    this.timeout(2000);
-    this.slow(2000);
-  });
-
-  it("calls call with no argument if file is ES5-compliant", function (done) {
+  it("calls call with no argument if file is ES5-compliant", function (_t, done) {
     checkFile(es5CompliantFile, done);
   });
 
-  it("calls callback with an error that includes the filename if the file passed contains code that is greater than ES5", function (done) {
+  it("calls callback with an error that includes the filename if the file passed contains code that is greater than ES5", function (_t, done) {
     checkFile(es2016File, function (err) {
       assert(err instanceof Error);
       assert.strictEqual(
@@ -27,7 +23,7 @@ describe("check-ecmascript-version-compatibility", function () {
     });
   });
 
-  it("allows you to pass an argument for version number to check", function (done) {
+  it("allows you to pass an argument for version number to check", function (_t, done) {
     checkFile(es2016File, 2016, done);
   });
 });
